@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('games_tabel', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id('gameid');
             $table->string('gamename');
             $table->string('developer');
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->date('releasedate');
             $table->integer('price');
-            $table->mediumblob('image');
+            $table->mediumText('image')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('games_tabel');
+        Schema::dropIfExists('games');
     }
 };

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class Games extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -16,6 +17,8 @@ class Games extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'games';
+    protected $primaryKey = 'gameid';
     protected $fillable = [
         'gamename',
         'developer',

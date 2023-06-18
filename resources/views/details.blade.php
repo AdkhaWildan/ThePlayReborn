@@ -5,16 +5,22 @@
         </h2>
     </x-slot>
 
-    <div>
-        <h1 class="text-white">TEST BANG --- EZ DIIEEEEK</h1>
-    </div>
+
+
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("ISI GAME BANG! SEMOGA PAKE SEEDER BISA") }}
-                </div>
+        <div class="card max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+            <div class="col-3 ">
+                <img src="build/assets/explore1.png" style="height:150px" alt="">
             </div>
+            <p class="mb-1 ">{{ $data->gamename }}</p>
+            <p class="mb-1 ">{{ $data->developer }}</p>
+            <p class="mb-1 ">{{ $data->price }}</p>
+            <p class="mb-1 ">{{ $data->publisher }}</p>
+            <p class="mb-1 ">{{ $data->description }}</p>
+            <p class="mb-1 ">{{ $data->releasedate }}</p>
         </div>
     </div>
+    </div>
+
 </x-app-layout>

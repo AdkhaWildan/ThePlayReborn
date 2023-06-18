@@ -15,20 +15,18 @@ class AdminController extends Controller
         {
             $usertype=Auth()->user()->usertype;
 
-            if($usertype=='user')
+            if($usertype=='admin')
             {
-                    return view('dashboard');
+                    $data = Games::all();
+                    return view('admin.admindashboard', compact('data'));
             }
 
-            else if($usertype=='admin')
+            elseif ($usertype=='user')
             {
-                    return view('admin.admindashboard');
+                    
+                    return view('dashboard');
             } 
 
-            else 
-            {
-                return redirect()->back();
-            }
         }
     }
 
@@ -40,17 +38,19 @@ class AdminController extends Controller
     
     public function store(Request $request)
     {
+
+        // return $request->file('image')->store('images');
+        
         $request->validate([
-            'image' => ['required', 'image', 'mimes:jpeg,jpg,png' ,'max:2048'],
+            // 'image' => ['required', 'image', 'mimes:jpeg,jpg,png' ,'max:2048'],
             'gamename' => ['required', 'string', 'max:255'],
-            'developer' => ['required', 'string', 'max:255'],
-            'publisher' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:255'],
-            'releasedate' => ['required', 'date', 'max:255'],
-            'price' => ['required', 'integer', 'max:255'],
+            // 'developer' => ['required', 'string', 'max:255'],
+            // 'publisher' => ['required', 'string', 'max:255'],
+            // 'description' => ['required', 'string', 'max:255'],
+            // 'releasedate' => ['required', 'date', 'max:255'],
+            // 'price' => ['required', 'integer', 'max:255'],
             
         ]);
-        
         
         $game = new Games;
         $game->gamename = $request->input('gamename');
@@ -59,16 +59,26 @@ class AdminController extends Controller
         $game->description = $request->input('description');
         $game->releasedate = $request->input('releasedate');
         $game->price = $request->input('price');
-        if($request->hasFile('image'))
+
+        if($request->hasfile('image'))
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('images/', $filename);
+            $filename = time() .'.'. $extension;
+            $file->move('images/game/', $filename);
             $game->image = $filename;
+            
         }
         $game->save();
+
+
+        
         return redirect()->back()->with('status', 'Game Image Added Successfully');
         // return view('admin.adminpost');
     }
+
+    // function show(){
+    //     $data = Games::all();
+    //     return view('admin.admindashboard',compact('data'));
+    // }
 }
