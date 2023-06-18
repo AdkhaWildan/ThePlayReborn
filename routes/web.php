@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [AdminController::class, 'store'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/adminpost', [AdminController::class, 'post'])->middleware(['auth', 'verified', 'admin'])->name('adminpost');
-
+Route::get('/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/adminpost', [AdminController::class, 'create'])->middleware(['auth', 'verified', 'admin'])->name('adminpost');
+Route::post('/adminpost', [AdminController::class, 'store'])->middleware(['auth', 'verified', 'admin']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
