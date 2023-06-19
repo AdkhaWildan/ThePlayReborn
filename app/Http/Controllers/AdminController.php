@@ -41,16 +41,16 @@ class AdminController extends Controller
 
         // return $request->file('image')->store('images');
         
-        $request->validate([
-            // 'image' => ['required', 'image', 'mimes:jpeg,jpg,png' ,'max:2048'],
-            'gamename' => ['required', 'string', 'max:255'],
-            // 'developer' => ['required', 'string', 'max:255'],
-            // 'publisher' => ['required', 'string', 'max:255'],
-            // 'description' => ['required', 'string', 'max:255'],
-            // 'releasedate' => ['required', 'date', 'max:255'],
-            // 'price' => ['required', 'integer', 'max:255'],
+        // $request->validate([
+        //     'image' => ['required', 'image', 'mimes:jpeg,jpg,png' ,'max:2048'],
+        //     'gamename' => ['required', 'string', 'max:255'],
+        //     'developer' => ['required', 'string', 'max:255'],
+        //     'publisher' => ['required', 'string', 'max:255'],
+        //     'description' => ['required', 'string', 'max:255'],
+        //     'releasedate' => ['required', 'date', 'max:255'],
+        //     'price' => ['required', 'integer', 'max:255'],
             
-        ]);
+        // ]);
         
         $game = new Games;
         $game->gamename = $request->input('gamename');
@@ -65,12 +65,13 @@ class AdminController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() .'.'. $extension;
-            $file->move('images/game/', $filename);
+            $file->move('images/games/', $filename);
             $game->image = $filename;
             
         }
+        // dd($request->all());
         $game->save();
-
+        
 
         
         return redirect()->back()->with('status', 'Game Image Added Successfully');

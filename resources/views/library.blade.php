@@ -17,4 +17,28 @@
             </div>
         </div>
     </div>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="p-6">
+                    <h1 class="text-2xl font-bold mb-4">Your Library</h1>
+
+                    @if($games->isEmpty())
+                    <p>You don't have any games in your library yet.</p>
+                    @else
+                    <ul>
+                        @foreach($games as $game)
+                        <li>
+                            <img src="{{ asset('images/games/' . $game->game->image) }}"
+                                alt="{{ $game->game->gamename }}" style="height: 150px;">
+                            <p>{{ $game->game->gamename }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

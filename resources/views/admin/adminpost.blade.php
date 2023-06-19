@@ -9,7 +9,7 @@
         <h1 class="text-white">TEST BANG --- EZ DIIEEEEK</h1>
     </div>
     <div class="py-12">
-        <form method="POST" action=" {{ route('addgame') }}" enctype="multipart/formdata">
+        <form method="POST" action=" {{ route('addgame') }}" enctype="multipart/form-data">
             @csrf
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
