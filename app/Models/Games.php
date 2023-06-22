@@ -23,6 +23,7 @@ class Games extends Model
         'gamename',
         'developer',
         'publisher',
+        'genre',
         'releasedate',
         'description',
         'price',

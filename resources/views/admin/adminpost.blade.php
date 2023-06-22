@@ -31,6 +31,10 @@
                             <input type="text" class="form-control form-control-sm" id="publisher" name="publisher">
                         </div>
                         <div class=" mb-3">
+                            <label for="genre" class="form-label">Genre</label>
+                            <input type="text" class="form-control form-control-sm" id="genre" name="genre">
+                        </div>
+                        <div class=" mb-3">
                             <label for="releasedate" class="form-label">Release Date</label>
                             <input type="date" class="form-control form-control-sm" id="releasedate" name="releasedate">
                         </div>

@@ -36,11 +36,9 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @if(Auth::user()->usertype === 'admin')
                     <x-nav-link :href="route('adminpost')" :active="request()->routeIs('adminpost')">
                         {{ __('Admin Post') }}
                     </x-nav-link>
-                    @endif
                 </div>
 
                 <!-- @if (Route::has('admin')) -->
