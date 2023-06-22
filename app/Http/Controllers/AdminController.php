@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function index()
+    
+    
+    public function dashboard()
     {
         if(Auth::id())
         {
@@ -39,18 +41,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
 
-        // return $request->file('image')->store('images');
         
-        // $request->validate([
-        //     'image' => ['required', 'image', 'mimes:jpeg,jpg,png' ,'max:2048'],
-        //     'gamename' => ['required', 'string', 'max:255'],
-        //     'developer' => ['required', 'string', 'max:255'],
-        //     'publisher' => ['required', 'string', 'max:255'],
-        //     'description' => ['required', 'string', 'max:255'],
-        //     'releasedate' => ['required', 'date', 'max:255'],
-        //     'price' => ['required', 'integer', 'max:255'],
-            
-        // ]);
         
         $game = new Games;
         $game->gamename = $request->input('gamename');
@@ -79,8 +70,23 @@ class AdminController extends Controller
         // return view('admin.admindashboard');
     }
 
-    // function show(){
+    
+}
+
+// return $request->file('image')->store('images');
+        
+        // $request->validate([
+        //     'image' => ['required', 'image', 'mimes:jpeg,jpg,png' ,'max:2048'],
+        //     'gamename' => ['required', 'string', 'max:255'],
+        //     'developer' => ['required', 'string', 'max:255'],
+        //     'publisher' => ['required', 'string', 'max:255'],
+        //     'description' => ['required', 'string', 'max:255'],
+        //     'releasedate' => ['required', 'date', 'max:255'],
+        //     'price' => ['required', 'integer', 'max:255'],
+            
+        // ]);
+
+        // function show(){
     //     $data = Games::all();
     //     return view('admin.admindashboard',compact('data'));
     // }
-}
