@@ -23,6 +23,7 @@
                                 <th scope="col">Game Name</th>
                                 <th scope="col">Developer</th>
                                 <th scope="col">Publisher</th>
+                                <th scope="col">Genre</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Release Date</th>
                                 <th scope="col">Price</th>
@@ -38,6 +39,7 @@
                                 <td>{{ $data->gamename }}</td>
                                 <td>{{ $data->developer }}</td>
                                 <td>{{ $data->publisher }}</td>
+                                <td>{{ $data->genre }}</td>
                                 <td>{{ $data->description }}</td>
                                 <td>{{ $data->releasedate }}</td>
                                 <td>{{ $data->price }}</td>

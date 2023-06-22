@@ -22,6 +22,7 @@
 
 
     <link href="css/styles.css" rel="stylesheet" />
+    <link href=" {{ URL::asset('css/styles.css') }}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/LOGO.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -59,4 +60,12 @@
     </body>
 </body>
 
+<footer class="bg-secondary text-center text-lg-start">
+    <!-- Copyright -->
+    <div class=" text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-light" href="https://www.tokopedia.com/pcnoov">PCNOOP Corp.</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </html>

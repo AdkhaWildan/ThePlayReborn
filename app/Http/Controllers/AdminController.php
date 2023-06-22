@@ -56,6 +56,7 @@ class AdminController extends Controller
         $game->gamename = $request->input('gamename');
         $game->developer = $request->input('developer');
         $game->publisher = $request->input('publisher');
+        $game->genre = $request->input('genre');
         $game->description = $request->input('description');
         $game->releasedate = $request->input('releasedate');
         $game->price = $request->input('price');
@@ -69,13 +70,13 @@ class AdminController extends Controller
             $game->image = $filename;
             
         }
-        // dd($request->all());
+        
         $game->save();
         
 
-        
+        // return view('admin.admindashboard');
         return redirect()->back()->with('status', 'Game Image Added Successfully');
-        // return view('admin.adminpost');
+        // return view('admin.admindashboard');
     }
 
     // function show(){

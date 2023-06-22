@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('gamename');
             $table->string('developer');
             $table->string('publisher');
+            $table->string('genre');
             $table->string('description');
             $table->date('releasedate');
             $table->integer('price');
