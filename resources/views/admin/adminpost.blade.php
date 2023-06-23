@@ -1,13 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('ADMIN HOME') }}
+        <h2 class="font-semibold text-l text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('ADD GAME') }}
         </h2>
     </x-slot>
 
-    <div>
-        <h1 class="text-white">TEST BANG --- EZ DIIEEEEK</h1>
-    </div>
+
     <div class="py-12">
         <form method="POST" action=" {{ route('addgame') }}" enctype="multipart/form-data">
             @csrf
@@ -49,7 +47,7 @@
                                 name="description"></textarea>
                         </div>
 
-                        <input class=" btn btn-primary justify-center" type="submit" value="Submit">
+                        <input class=" btn bg-secondary justify-center text-light" type="submit" value="Submit">
                     </div>
                 </div>
             </div>
