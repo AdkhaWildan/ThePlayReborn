@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Home') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -43,7 +43,7 @@
 
                 @auth
                 @if(Auth::user()->usertype === 'user')
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
                     <x-nav-link :href="route('library')" :active="request()->routeIs('library')">
                         {{ __('Library') }}
                     </x-nav-link>
@@ -75,8 +75,8 @@
                             </button>
                         </x-slot>
 
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('profile.edit')">
+                        <x-slot name="content" class="bg-secondary">
+                            <x-dropdown-link :href="route('profile.edit')" class="text-dark">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
@@ -85,8 +85,8 @@
                                 @csrf
 
                                 <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                                this.closest('form').submit();" class="text-dark">
+                                    {{ __('Logout') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
