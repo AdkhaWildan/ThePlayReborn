@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    {{-- <div class="py-10">
+    <!-- {{-- <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -13,9 +13,9 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div> --}} -->
 
-    <div class="container py-10">
+    <div class="container py-10 mt-5">
         <div class="pl-2 row">
             <div class="card col-2 bg-light">
                 <div class="pl-2">
@@ -28,49 +28,49 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Action
-                        </p> 
+                            <p style="font-size: 90%">
+                                Action
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Adventure
-                        </p> 
+                            <p style="font-size: 90%">
+                                Adventure
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            RPG
-                        </p> 
+                            <p style="font-size: 90%">
+                                RPG
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Sport
-                        </p> 
+                            <p style="font-size: 90%">
+                                Sport
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Horror
-                        </p> 
+                            <p style="font-size: 90%">
+                                Horror
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Simulation
-                        </p> 
+                            <p style="font-size: 90%">
+                                Simulation
+                            </p>
                         </label>
                     </div>
 
@@ -80,33 +80,33 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Single Player
-                        </p> 
+                            <p style="font-size: 90%">
+                                Single Player
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Multiplayer 
-                        </p> 
+                            <p style="font-size: 90%">
+                                Multiplayer
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Co-op
-                        </p> 
+                            <p style="font-size: 90%">
+                                Co-op
+                            </p>
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          <p style="font-size: 90%">
-                            Local
-                        </p> 
+                            <p style="font-size: 90%">
+                                Local
+                            </p>
                         </label>
                     </div>
                     <br>
@@ -118,7 +118,8 @@
                     <div class="row">
                         <div class="col-3">
                             <a href="{{ route('details', ['gameid' => $data->gameid]) }}">
-                                <img src="{{ asset('images/games/' . $data->image) }}" class="img-fluid w-60 h-32 m-2 rounded-3" alt="product" style="object-fit: cover">
+                                <img src="{{ asset('images/games/' . $data->image) }}"
+                                    class="img-fluid w-60 h-32 m-2 rounded-3" alt="product" style="object-fit: cover">
                             </a>
                         </div>
                         <div class="col-5 mt-3">
@@ -131,8 +132,9 @@
                             <p class="h6 text-right">Rp{{ $data->price }}</p>
                         </div>
                         <div class="col-2 my-auto mx-auto">
-                            <a href="{{ route('details', ['gameid' => $data->gameid]) }}" class="btn btn-secondary btn-lg active btn-sm" role="button" aria-pressed="true">
-                                <p class="font-semibold"  style="font-size:70%">
+                            <a href="{{ route('details', ['gameid' => $data->gameid]) }}"
+                                class="btn btn-secondary btn-lg active btn-sm" role="button" aria-pressed="true">
+                                <p class="font-semibold" style="font-size:70%">
                                     Play Now
                                 </p>
                             </a>
@@ -147,15 +149,15 @@
     {{-- @foreach ($data as $data)
     <div class="mb-1 card bg-white">
                 <a href="{{ route('details', ['gameid' => $data->gameid]) }}">
-                    <img src="build/assets/explore1.png" style="height:150px" alt="">
-                </a>
-            <p class="mb-1 ">{{ $data->gamename }}</p>
-            <p class="mb-1 ">{{ $data->developer }}</p>
-            <p class="mb-1 ">{{ $data->price }}</p>
-            <p class="mb-1 ">{{ $data->publisher }}</p>
+    <img src="build/assets/explore1.png" style="height:150px" alt="">
+    </a>
+    <p class="mb-1 ">{{ $data->gamename }}</p>
+    <p class="mb-1 ">{{ $data->developer }}</p>
+    <p class="mb-1 ">{{ $data->price }}</p>
+    <p class="mb-1 ">{{ $data->publisher }}</p>
     </div>
     @endforeach
-     --}}
+    --}}
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

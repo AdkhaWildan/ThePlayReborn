@@ -21,26 +21,6 @@
                         {{ __('Store') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                        {{ __('About') }}
-                    </x-nav-link>
-                </div>
-
-                @guest
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <a href="{{ route('login') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                        in</a>
-                </div>
-                @if (Route::has('register'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <a href="{{ route('register') }}"
-                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                </div>
-                @endif
-                @endguest
-
                 @auth
                 @if(Auth::user()->usertype === 'user')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
@@ -49,7 +29,6 @@
                     </x-nav-link>
                 </div>
                 @endif
-
                 @if(Auth::user()->usertype === 'admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('admindashboard')" :active="request()->routeIs('admindashboard')">
@@ -57,42 +36,15 @@
                     </x-nav-link>
                 </div>
                 @endif
-
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
-                    <x-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button
-                                class="inline-flex items-center px-3 py-2  text-sm leading-4 font-medium rounded-md text-light dark:text-gray-400 bg-secondary dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                                <div>{{ Auth::user()->username }}</div>
-                                <div class="ml-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content" class="bg-secondary">
-                            <x-dropdown-link :href="route('profile.edit')" class="text-dark">
-                                {{ __('Profile') }}
-                            </x-dropdown-link>
-
-                            <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="text-dark">
-                                    {{ __('Logout') }}
-                                </x-dropdown-link>
-                            </form>
-                        </x-slot>
-                    </x-dropdown>
-                </div>
                 @endauth
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('About') }}
+                    </x-nav-link>
+                </div>
+
+
+
 
                 <!-- Hamburger -->
                 <div class="-mr-2 flex items-center sm:hidden">
@@ -109,6 +61,75 @@
                     </button>
                 </div>
             </div>
+
+            @guest
+
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex my-auto" style="justify-content: right;">
+                <a href="{{ route('login') }}"
+                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
+                    in</a>
+                @if (Route::has('register'))
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex my-auto"> -->
+                <a href="{{ route('register') }}"
+                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                <!-- </div> -->
+
+                @endif
+            </div>
+
+            @endguest
+
+            <!-- @auth
+            @if(Auth::user()->usertype === 'user')
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
+                <x-nav-link :href="route('library')" :active="request()->routeIs('library')">
+                    {{ __('Library') }}
+                </x-nav-link>
+            </div>
+            @endif -->
+
+
+
+
+
+
+
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <x-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        <button
+                            class="inline-flex items-center px-3 py-2  text-sm leading-4 font-medium rounded-md text-light dark:text-gray-400 bg-secondary dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <div>{{ Auth::user()->username }}</div>
+                            <div class="ml-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                    </x-slot>
+
+                    <x-slot name="content" class="bg-secondary">
+                        <x-dropdown-link :href="route('profile.edit')" class="text-dark">
+                            {{ __('Profile') }}
+                        </x-dropdown-link>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="text-dark">
+                                {{ __('Logout') }}
+                            </x-dropdown-link>
+                        </form>
+                    </x-slot>
+                </x-dropdown>
+            </div>
+            @endauth
+
         </div>
 
         <!-- Responsive Navigation Menu -->

@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('INI STORE') }}
+        <h2 class="font-semibold text-l text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('DETAILS') }}
         </h2>
     </x-slot>
 
-    <div class="py-10 mx-auto bg-primary container text-light">
+    <div class="py-10 mx-auto bg-primary container text-light mt-5">
         <div class="mb-1 card rounded-3 bg-secondary border-0">
             <div class="row">
                 <div class="col-3">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-2">
                     @if (Auth::check())
-                    <a type="button" class="d-flex btn bg-light align-bottom text-secondary  mr-4 mt-48 w-32"
+                    <a type="button" class="d-flex btn bg-light align-bottom text-secondary  mr-4 mt-48 w-32 mt-5 mr-2"
                         data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <p class="font-semibold ml-4">
                             Buy Now
